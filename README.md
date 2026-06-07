@@ -1,33 +1,39 @@
 # LinguaFlow - 沉浸式多语种在线教育平台
-
 <div align="center">
-
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-6-purple?logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwindcss)
 ![Zustand](https://img.shields.io/badge/Zustand-5-orange)
 
+**把学习科学的认知原理，做成真正可运行的语言学习产品。**
+
 **支持英语、日语、韩语的沉浸式语言学习体验**
-
 [功能介绍](#-核心功能) · [快速开始](#-快速开始) · [技术架构](#-技术架构) · [项目结构](#-项目结构) · [演示账号](#-演示账号)
-
 </div>
-
 ---
-
 ## 项目简介
-
 LinguaFlow 是一款面向全球语言学习者的沉浸式在线教育平台，融合 AI 驱动的个性化推荐、互动式学习模块、社区交流与成就激励系统，打造高效、有趣的语言学习体验。
-
 ### 设计理念
-
 **「知识海洋」沉浸式体验** — 以深海蓝为基底，搭配珊瑚橙活力强调色，通过玻璃态效果和流畅动画营造沉浸式学习氛围。
 
+## 定位与愿景
+
+> **LinguaFlow 不只是一个 Demo 项目——它是 Skill 系统的产品化验证。**
+
+本项目来自同一作者的学习/AI/创作 Skill 体系的产品化实践：
+- **学习方法论** 来自 [Learning System](https://github.com/shenweihuan/learning-system)（基于 37+ 本学习科学经典的认知科学支撑）
+- **主动学习节奏** 来自 [Codex Learning Skills](https://github.com/shenweihuan/codex-learning-skills)（每日规划/复盘的自动化理念）
+- **审美与交互设计** 受 [AIGC Creative Skills v3](https://github.com/shenweihuan/aigc-creative-skills-v3) 的品味系统影响
+
+**下一步计划：**
+- [ ] 接入 AI 个性化学习路径推荐（融合 Learning System 的理解建构模块）
+- [ ] 加入主动学习提醒机制（借鉴 Codex Skills 的晨间/晚间工作流）
+- [ ] 多语种扩展（日语/韩语数据完善）
+- [ ] 后端服务化（用户数据云端同步）
+
 ---
-
 ## 核心功能
-
 | 模块 | 功能说明 |
 |------|----------|
 | **分级课程体系** | 12 门精品课程覆盖英语/日语/韩语，A1-C1 六级难度，章节化课程结构 |
@@ -40,42 +46,28 @@ LinguaFlow 是一款面向全球语言学习者的沉浸式在线教育平台，
 | **个性化推荐** | 基于等级/薄弱环节的规则引擎推荐算法，Top 6 课程推荐 |
 | **社区交流** | 6 分类帖子流、评论系统、每日打卡、点赞收藏分享 |
 | **成就激励** | 22 个成就（Common/Rare/Epic/Legendary 四级稀有度），事件驱动解锁 |
-
 ---
-
 ## 快速开始
-
 ### 环境要求
-
 - Node.js >= 18
 - npm >= 9
-
 ### 安装与运行
-
 ```bash
 # 克隆仓库
 git clone https://github.com/shenweihuan/linguaflow.git
-
 # 进入项目目录
 cd linguaflow
-
 # 安装依赖
 npm install
-
 # 启动开发服务器
 npm run dev
-
 # 构建生产版本
 npm run build
-
 # 预览生产构建
 npm run preview
 ```
-
 启动后访问 **http://localhost:5173**
-
 ### 可用脚本
-
 | 命令 | 说明 |
 |------|------|
 | `npm run dev` | 启动开发服务器 (Vite HMR) |
@@ -83,13 +75,9 @@ npm run preview
 | `npm run preview` | 预览生产构建结果 |
 | `npm run lint` | ESLint 代码检查 |
 | `npm run check` | TypeScript 类型检查 (`tsc --noEmit`) |
-
 ---
-
 ## 技术架构
-
 ### 技术栈
-
 | 类别 | 技术 | 版本 |
 |------|------|------|
 | 前端框架 | React | 18.x |
@@ -101,9 +89,7 @@ npm run preview
 | 动画库 | Framer Motion | 11.x |
 | 图表库 | Recharts | 2.x |
 | 图标库 | Lucide React | latest |
-
 ### 架构分层
-
 ```
 ┌─────────────────────────────────────┐
 │           前端应用层 (React SPA)      │
@@ -119,9 +105,7 @@ npm run preview
 │  Zustand Store 状态共享              │
 └─────────────────────────────────────┘
 ```
-
 ### 数据模型
-
 ```
 User ──1:N── Progress ──N:1── Course
 User ──1:N── UserAchievement ──N:1── Achievement
@@ -131,11 +115,8 @@ Course ──1:N── Chapter ──1:N── Lesson
 Lesson ──1:N── Vocabulary / GrammarExercise / ListeningExercise
 Language ──1:N── Course
 ```
-
 ---
-
 ## 项目结构
-
 ```
 src/
 ├── assets/
@@ -191,11 +172,8 @@ src/
 ├── App.tsx                    # 应用根组件
 └── main.tsx                   # 入口文件
 ```
-
 ---
-
 ## 页面路由
-
 | 路径 | 页面 | 权限 |
 |------|------|------|
 | `/` | 首页 - 语言选择入口 | 公开 |
@@ -212,25 +190,17 @@ src/
 | `/profile` | 个人中心 | 需登录 |
 | `/community` | 社区广场 | 需登录 |
 | `/community/post/:id` | 话题详情 | 需登录 |
-
 ---
-
 ## 演示账号
-
 | 字段 | 值 |
 |------|-----|
 | 邮箱 | `demo@linguaflow.com` |
 | 密码 | `demo123456` |
 | 目标语言 | 英语 (A2 级别) |
-
 > 登录后可体验全部功能：课程浏览、四大学习模块、进度追踪、社区交流、成就系统等。
-
 ---
-
 ## 设计规范
-
 ### 配色方案
-
 | 用途 | 颜色 | 色值 |
 |------|------|------|
 | 主背景 | 深海蓝 | `#0A1628` |
@@ -239,36 +209,25 @@ src/
 | 日语主题 | 柔和紫 | `#7C3AED` |
 | 韩语主题 | 暖黄 | `#F59E0B` |
 | 文字主色 | 纯净白 | `#F8FAFC` |
-
 ### 字体
-
 | 用途 | 字体 |
 |------|------|
 | 标题 | Outfit (几何感现代字体) |
 | 正文 | Inter / Noto Sans SC / Noto Sans JP / Noto Sans KR |
-
 ### 动效规范
-
 - 页面进入：400ms ease-out 淡入上浮
 - 卡片悬浮：200ms 上浮 + 阴影加深
 - 闪卡翻转：600ms 3D 翻转
 - 数字滚动：1000ms 递增动画
-
 ---
-
 ## 浏览器兼容性
-
 | 浏览器 | 支持版本 |
 |--------|----------|
 | Chrome | >= 90 |
 | Firefox | >= 88 |
 | Safari | >= 14 |
 | Edge | >= 90 |
-
 > 注：口语跟读功能需要浏览器支持 Web Speech API（Chrome/Safari/Edge 支持）
-
 ---
-
 ## License
-
 MIT License © 2024 LinguaFlow
